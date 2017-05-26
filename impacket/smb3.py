@@ -922,9 +922,7 @@ class SMB3:
         if self._Session['TreeConnectTable'].has_key(treeId) is False:
             raise SessionError(STATUS_INVALID_PARAMETER)
 
-        fileName = string.replace(fileName, '/', '\\')
         if len(fileName) > 0:
-            fileName = ntpath.normpath(fileName)
             if fileName[0] == '\\':
                 fileName = fileName[1:]
 
